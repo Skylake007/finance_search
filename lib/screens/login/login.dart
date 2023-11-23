@@ -99,6 +99,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         )),
                     TextButton(
                       onPressed: () {
+                        // ignore: avoid_print
                         print("object");
                       },
                       child: const Text('Register',
@@ -108,6 +109,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 ElevatedButton(
                   onPressed: () {},
+                  // ignore: sort_child_properties_last
                   child: const Text('Get smart OTP'),
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.transparent,
