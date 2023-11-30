@@ -109,8 +109,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 ElevatedButton(
                   onPressed: () {},
-                  // ignore: sort_child_properties_last
-                  child: const Text('Get smart OTP'),
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.transparent,
                       foregroundColor: Colors.white,
@@ -120,6 +118,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             width: 1,
                           ),
                           borderRadius: BorderRadius.circular(20))),
+                  child: const Text('Get smart OTP'),
                 ),
               ],
             ),

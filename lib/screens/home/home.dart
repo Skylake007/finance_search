@@ -1,5 +1,6 @@
 import 'package:finance_search/screens/home/assets/assets.dart';
-import 'package:finance_search/screens/home/cashtransfer/cash_transfer.dart';
+import 'package:finance_search/screens/home/cash_transfer/cash_transfer.dart';
+import 'package:finance_search/screens/home/drawers.left/left.dart';
 import 'package:finance_search/screens/home/market/market.dart';
 import 'package:finance_search/screens/home/trading/trading.dart';
 import 'package:finance_search/screens/home/watchlist/watch_list.dart';
@@ -14,9 +15,10 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final List<Widget> _screens = const [
-    WatchList(),
     Market(),
+    WatchList(),
     Trading(),
     Assets(),
     CashTransfer()
@@ -25,7 +27,8 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // drawer: , //man hinh ben trai
+      key: _scaffoldKey,
+      drawer: const LeftDrawer(),
       body: Column(
         children: [
           SafeArea(
@@ -35,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   IconButton(
                     onPressed: () {
-                      //drawer
+                      _scaffoldKey.currentState?.openDrawer();
                     },
                     icon: const Icon(Icons.menu),
                   ),
@@ -69,8 +72,8 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.list), label: 'Watch list'),
           BottomNavigationBarItem(icon: Icon(Icons.pie_chart), label: 'Market'),
+          BottomNavigationBarItem(icon: Icon(Icons.list), label: 'Watch list'),
           BottomNavigationBarItem(
               icon: Icon(Icons.bar_chart), label: 'Trading'),
           BottomNavigationBarItem(
