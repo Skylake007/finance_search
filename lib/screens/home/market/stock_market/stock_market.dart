@@ -23,6 +23,7 @@ class _StockMarketState extends State<StockMarket> {
             DropdownButton<String>(
                 icon: const Icon(Icons.arrow_downward_sharp),
                 hint: const Text('Select index'),
+                borderRadius: const BorderRadius.all(Radius.circular(5)),
                 value: _selectedIndex.isEmpty ? null : _selectedIndex,
                 items: _indexes.map<DropdownMenuItem<String>>((String value) {
                   return DropdownMenuItem<String>(

@@ -1,4 +1,5 @@
-import 'package:finance_search/screens/home/market/stock_market/stock_maket.dart';
+import 'package:finance_search/screens/home/market/industry/industry_market.dart';
+import 'package:finance_search/screens/home/market/stock_market/stock_market.dart';
 import 'package:flutter/material.dart';
 import 'package:infinite_scroll_tab_view/infinite_scroll_tab_view.dart';
 
@@ -34,7 +35,13 @@ class _MarketState extends State<Market> {
                     fontSize: 18),
               ),
           pageBuilder: (context, index, _) {
-            return const StockMarket();
+            if (index == 0) {
+              return const StockMarket();
+            } else if (index == 1) {
+              return const Industry();
+            } else {
+              return const Text('Error');
+            }
           }),
     );
   }

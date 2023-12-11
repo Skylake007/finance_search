@@ -23,7 +23,7 @@ class _IndustryState extends State<Industry> {
     'Consumer Durables & Apparel',
     'Retailing',
   ];
-  String _selectedIndex = '';
+  String _selectedIndustry = '';
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -35,8 +35,9 @@ class _IndustryState extends State<Industry> {
             ),
             DropdownButton<String>(
                 icon: const Icon(Icons.arrow_downward_sharp),
-                hint: const Text('Select index'),
-                value: _selectedIndex.isEmpty ? null : _selectedIndex,
+                hint: const Text('Select Industry'),
+                borderRadius: const BorderRadius.all(Radius.circular(5)),
+                value: _selectedIndustry.isEmpty ? null : _selectedIndustry,
                 items:
                     _industries.map<DropdownMenuItem<String>>((String value) {
                   return DropdownMenuItem<String>(
@@ -46,7 +47,7 @@ class _IndustryState extends State<Industry> {
                 }).toList(),
                 onChanged: (String? selectedItem) {
                   setState(() {
-                    _selectedIndex = selectedItem ?? '';
+                    _selectedIndustry = selectedItem ?? '';
                   });
                 }),
           ],
