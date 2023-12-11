@@ -1,15 +1,28 @@
 import 'package:finance_search/screens/data/data_cells.dart';
 import 'package:flutter/material.dart';
 
-class StockMarket extends StatefulWidget {
-  const StockMarket({super.key});
+class Industry extends StatefulWidget {
+  const Industry({super.key});
 
   @override
-  State<StockMarket> createState() => _StockMarketState();
+  State<Industry> createState() => _IndustryState();
 }
 
-class _StockMarketState extends State<StockMarket> {
-  final List<String> _indexes = ['VN30', 'HOSE', 'HNX', 'UPCOM'];
+class _IndustryState extends State<Industry> {
+  final List<String> _industries = [
+    'Software & Services',
+    'Technology Hardware & Equipment',
+    'Semiconductor Equipment',
+    'Pharmaceuticals',
+    'Biotechnology',
+    'Medical Devices & Supplies',
+    'Banking',
+    'Insurance',
+    'Asset Management & Custody Banks',
+    'Automobiles & Components',
+    'Consumer Durables & Apparel',
+    'Retailing',
+  ];
   String _selectedIndex = '';
   @override
   Widget build(BuildContext context) {
@@ -24,7 +37,8 @@ class _StockMarketState extends State<StockMarket> {
                 icon: const Icon(Icons.arrow_downward_sharp),
                 hint: const Text('Select index'),
                 value: _selectedIndex.isEmpty ? null : _selectedIndex,
-                items: _indexes.map<DropdownMenuItem<String>>((String value) {
+                items:
+                    _industries.map<DropdownMenuItem<String>>((String value) {
                   return DropdownMenuItem<String>(
                     value: value,
                     child: Text(value),
