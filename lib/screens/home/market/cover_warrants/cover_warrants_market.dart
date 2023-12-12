@@ -24,7 +24,7 @@ class _CoverWarrantsState extends State<CoverWarrants> {
   ];
   String _selectedSymbols = '';
   String _selectedIssuers = '';
-
+  bool _showDatePicker = false;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -89,15 +89,19 @@ class _CoverWarrantsState extends State<CoverWarrants> {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
               ),
-              const InkWell(
-                child: Row(children: [
-                  Text(
-                    'Choose date',
-                    style: TextStyle(fontSize: 14),
-                  ),
-                  SizedBox(width: 5),
-                  Icon(Icons.date_range),
-                ]),
+              InkWell(
+                child: const Row(
+                  children: [
+                    Text('Choose date', style: TextStyle(fontSize: 14)),
+                    SizedBox(width: 5),
+                    Icon(Icons.date_range, size: 16),
+                  ],
+                ),
+                onTap: () {
+                  setState(() {
+                    _showDatePicker = true;
+                  });
+                },
               )
             ],
           ),
