@@ -31,10 +31,13 @@ class _IndustryState extends State<Industry> {
         Row(
           children: [
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 10),
             ),
             DropdownButton<String>(
-                icon: const Icon(Icons.arrow_downward_sharp),
+                icon: const Icon(
+                  Icons.arrow_downward_sharp,
+                  size: 16,
+                ),
                 hint: const Text('Select Industry'),
                 borderRadius: const BorderRadius.all(Radius.circular(5)),
                 value: _selectedIndustry.isEmpty ? null : _selectedIndustry,
@@ -42,7 +45,10 @@ class _IndustryState extends State<Industry> {
                     _industries.map<DropdownMenuItem<String>>((String value) {
                   return DropdownMenuItem<String>(
                     value: value,
-                    child: Text(value),
+                    child: Text(
+                      value,
+                      style: const TextStyle(fontSize: 14),
+                    ),
                   );
                 }).toList(),
                 onChanged: (String? selectedItem) {

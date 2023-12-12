@@ -21,14 +21,20 @@ class _StockMarketState extends State<StockMarket> {
               padding: const EdgeInsets.symmetric(horizontal: 20),
             ),
             DropdownButton<String>(
-                icon: const Icon(Icons.arrow_downward_sharp),
+                icon: const Icon(
+                  Icons.arrow_downward_sharp,
+                  size: 16,
+                ),
                 hint: const Text('Select index'),
                 borderRadius: const BorderRadius.all(Radius.circular(5)),
                 value: _selectedIndex.isEmpty ? null : _selectedIndex,
                 items: _indexes.map<DropdownMenuItem<String>>((String value) {
                   return DropdownMenuItem<String>(
                     value: value,
-                    child: Text(value),
+                    child: Text(
+                      value,
+                      style: const TextStyle(fontSize: 14),
+                    ),
                   );
                 }).toList(),
                 onChanged: (String? selectedItem) {

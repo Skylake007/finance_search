@@ -1,3 +1,4 @@
+import 'package:finance_search/screens/home/market/cover_warrants/cover_warrants_market.dart';
 import 'package:finance_search/screens/home/market/derivatives/derivatives_market.dart';
 import 'package:finance_search/screens/home/market/index/index_market.dart';
 import 'package:finance_search/screens/home/market/industry/industry_market.dart';
@@ -46,6 +47,8 @@ class _MarketState extends State<Market> {
               return const Index();
             } else if (index == 3) {
               return const Derivatives();
+            } else if (index == 4) {
+              return const CoverWarrants();
             } else {
               return const Text('Error');
             }
