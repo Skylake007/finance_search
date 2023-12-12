@@ -1,3 +1,5 @@
+import 'package:finance_search/screens/home/market/derivatives/derivatives_market.dart';
+import 'package:finance_search/screens/home/market/index/index_market.dart';
 import 'package:finance_search/screens/home/market/industry/industry_market.dart';
 import 'package:finance_search/screens/home/market/stock_market/stock_market.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +17,7 @@ class _MarketState extends State<Market> {
     'Stock Market',
     'Industry',
     'Index',
+    'Derivatives',
     'Cover Warrants',
     'EFT',
     'Top Stock'
@@ -39,6 +42,10 @@ class _MarketState extends State<Market> {
               return const StockMarket();
             } else if (index == 1) {
               return const Industry();
+            } else if (index == 2) {
+              return const Index();
+            } else if (index == 3) {
+              return const Derivatives();
             } else {
               return const Text('Error');
             }
